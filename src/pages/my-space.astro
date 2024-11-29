@@ -1,0 +1,110 @@
+---
+// src/pages/my-games.astro
+import Layout from "../layouts/Layout.astro";
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+import MyGamesComponent from "@/components/my-games-component";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+// Simular datos del usuario
+const userData = {
+  mostPlayed: [
+    {
+      id: "1",
+      name: "Dons Fortune",
+      timesPlayed: 150,
+      image: "/games/dons-fortune.jpeg",
+    },
+    {
+      id: "2",
+      name: "Rebel Reels",
+      timesPlayed: 120,
+      image: "/games/rebel-reels.jpeg",
+    },
+    {
+      id: "3",
+      name: "Zombie Zillionaire",
+      timesPlayed: 100,
+      image: "/games/zombie-zillionaire.jpeg",
+    },
+  ],
+  mostWins: [
+    {
+      id: "4",
+      name: "Golden Treasure Hunt",
+      wins: 75,
+      image: "/games/golden-treasure-hunt.jpg",
+    },
+    {
+      id: "5",
+      name: "Fruit Frenzy Bonanza",
+      wins: 60,
+      image: "/games/fruit-frenzy-bonanza.jpg",
+    },
+    {
+      id: "6",
+      name: "Mystic Fortune Teller",
+      wins: 55,
+      image: "/games/mystic-fortune-teller.jpg",
+    },
+  ],
+  favorites: [
+    {
+      id: "7",
+      name: "Cosmic Cash Explosion",
+      image: "/games/cosmic-cash-explosion.jpg",
+    },
+    {
+      id: "8",
+      name: "Wild West Bonanza",
+      image: "/games/wild-west-bonanza.jpg",
+    },
+    { id: "9", name: "Dragons Hoard", image: "/games/dragons-hoard.jpg" },
+  ],
+  availableBonuses: [
+    {
+      id: "1",
+      name: "Welcome Bonus",
+      description: "100% match up to $500",
+      expiryDate: "2024-04-30",
+    },
+    {
+      id: "2",
+      name: "Free Spins Friday",
+      description: "50 free spins on Cosmic Cash Explosion",
+      expiryDate: "2024-03-31",
+    },
+  ],
+  statistics: {
+    totalGamesPlayed: 500,
+    totalWins: 250,
+    biggestWin: 1000,
+    favoriteCategory: "Adventure Slots",
+  },
+};
+---
+
+<Layout title={t("myGames.title")} description={t("myGames.description")}>
+  <main class="container mx-auto px-4 py-2">
+    <h1 class="text-4xl font-bold mb-8 text-center text-white">
+      {t("myGames.title")} My Space
+    </h1>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+      <a
+        href="/deposit"
+        class="bg-gradient-to-r from-yellow-400 to-yellow-600 hover:from-yellow-500 hover:to-yellow-700 text-black px-4 py-2 rounded flex items-center justify-center space-x-2 transition duration-300"
+      >
+        Deposit
+      </a>
+
+      <a
+        href="/bet-history"
+        class="bg-gradient-to-r from-yellow-400 to-yellow-600 hover:from-yellow-500 hover:to-yellow-700 text-black px-4 py-2 rounded flex items-center justify-center space-x-2 transition duration-300"
+      >
+        Bet History
+      </a>
+    </div>
+    <MyGamesComponent client:load userData={userData} />
+  </main>
+</Layout>

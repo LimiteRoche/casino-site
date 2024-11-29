@@ -1,0 +1,33 @@
+---
+// src/pages/promotions.astro
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout
+  title="Promotions - WinSlots Casino"
+  description="Check out our latest casino promotions and bonuses"
+>
+  <main class="container mx-auto px-4">
+    <h1 class="text-4xl font-bold mb-6">Current Promotions</h1>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="bg-card text-card-foreground rounded-lg shadow-lg p-6">
+        <h2 class="text-2xl font-semibold mb-4">Welcome Bonus</h2>
+        <p>Get a 100% match on your first deposit up to $500!</p>
+        <a
+          href="/promotions/welcome-bonus"
+          class="mt-4 inline-block bg-primary text-primary-foreground px-4 py-2 rounded-md hover:bg-primary/90"
+          >Claim Now</a
+        >
+      </div>
+      <div class="bg-card text-card-foreground rounded-lg shadow-lg p-6">
+        <h2 class="text-2xl font-semibold mb-4">Free Spins Friday</h2>
+        <p>Get 50 free spins every Friday when you deposit $20 or more!</p>
+        <a
+          href="/promotions/free-spins-friday"
+          class="mt-4 inline-block bg-primary text-primary-foreground px-4 py-2 rounded-md hover:bg-primary/90"
+          >Learn More</a
+        >
+      </div>
+    </div>
+  </main>
+</Layout>

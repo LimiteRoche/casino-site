@@ -1,0 +1,87 @@
+---
+// src/layouts/Layout.astro
+import Footer from "@/components/footer.astro";
+import Header from "@/components/header.astro";
+import NotificationBanner from "@/components/notification-banner";
+
+import Global from "@/styles/global.astro";
+import { ViewTransitions } from "astro:transitions";
+
+interface Props {
+  title: string;
+  description: string;
+}
+
+const { title, description } = Astro.props;
+
+const schemaOrgWebsite = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "WinBet",
+  url: "https://www.winbet.com",
+  potentialAction: {
+    "@type": "SearchAction",
+    target: "https://www.winbet.com/search?q={search_term_string}",
+    "query-input": "required name=search_term_string",
+  },
+};
+
+const schemaOrgOrganization = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "WinBet",
+  url: "https://www.winbet.com",
+  logo: "https://www.winbet.com/logo.png",
+  sameAs: [
+    "https://www.facebook.com/winbet",
+    "https://twitter.com/winbet",
+    "https://www.instagram.com/winbet",
+  ],
+};
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#1a1a1a" />
+    <link rel="canonical" href={Astro.url} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={Astro.url} />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <ViewTransitions />
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify(schemaOrgWebsite)}
+    />
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify(schemaOrgOrganization)}
+    />
+  </head>
+  <body class="bg-[#1a1a1a] text-white">
+    <NotificationBanner client:load />
+    <Header />
+    <Global />
+    <main class="bg-gradient-to-b from-purple-900 to-indigo-900">
+      <slot />
+    </main>
+    <Footer />
+    <script is:inline>
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Tab") {
+          document.body.classList.add("user-is-tabbing");
+        }
+      });
+    </script>
+  </body>
+</html>

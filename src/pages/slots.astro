@@ -1,0 +1,19 @@
+---
+import Footer from "@/components/footer.astro";
+import Header from "@/components/header.astro";
+import SlotGames from "@/components/slotgames";
+import Layout from "@/layouts/layout.astro";
+
+// src/pages/slots.astro
+---
+
+<Layout
+  title="Exciting Slot Games - WinBet Casino"
+  description="Explore our wide selection of thrilling slot games at WinBet Casino. From classic favorites to the latest releases, find your perfect game and win big!"
+>
+  <Header />
+  <main>
+    <SlotGames client:load />
+  </main>
+  <Footer />
+</Layout>

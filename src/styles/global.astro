@@ -1,0 +1,57 @@
+---
+// src/styles/global.astro
+---
+
+<style is:global>
+  :root {
+    --background: 273deg 100% 98%;
+    --foreground: 273deg 10% 10%;
+    --card: 273deg 100% 100%;
+    --card-foreground: 273deg 10% 10%;
+    --popover: 273deg 100% 100%;
+    --popover-foreground: 273deg 10% 10%;
+    --primary: 273deg 100% 50%;
+    --primary-foreground: 273deg 100% 98%;
+    --secondary: 273deg 30% 90%;
+    --secondary-foreground: 273deg 10% 10%;
+    --muted: 273deg 30% 90%;
+    --muted-foreground: 273deg 10% 40%;
+    --accent: 273deg 30% 90%;
+    --accent-foreground: 273deg 10% 10%;
+    --destructive: 0deg 100% 50%;
+    --destructive-foreground: 273deg 100% 98%;
+    --border: 273deg 20% 85%;
+    --input: 273deg 20% 85%;
+    --ring: 273deg 100% 50%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 273deg 50% 5%;
+    --foreground: 273deg 10% 90%;
+    --card: 273deg 50% 10%;
+    --card-foreground: 273deg 10% 90%;
+    --popover: 273deg 50% 10%;
+    --popover-foreground: 273deg 10% 90%;
+    --primary: 273deg 100% 50%;
+    --primary-foreground: 273deg 10% 90%;
+    --secondary: 273deg 30% 20%;
+    --secondary-foreground: 273deg 10% 90%;
+    --muted: 273deg 30% 20%;
+    --muted-foreground: 273deg 10% 60%;
+    --accent: 273deg 30% 20%;
+    --accent-foreground: 273deg 10% 90%;
+    --destructive: 0deg 100% 50%;
+    --destructive-foreground: 273deg 10% 90%;
+    --border: 273deg 20% 25%;
+    --input: 273deg 20% 25%;
+    --ring: 273deg 100% 50%;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings:
+      "rlig" 1,
+      "calt" 1;
+  }
+</style>

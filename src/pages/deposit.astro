@@ -1,0 +1,42 @@
+---
+// src/pages/deposit.astro
+import DepositForm from "@/components/deposit-form";
+import Layout from "../layouts/Layout.astro";
+import { Icon } from "astro-icon/components";
+
+const paymentMethods = [
+  { id: "credit-card", name: "Credit Card", icon: "mdi:credit-card" },
+  { id: "paypal", name: "PayPal", icon: "mdi:paypal" },
+  { id: "bank-transfer", name: "Bank Transfer", icon: "mdi:bank" },
+  { id: "crypto", name: "Cryptocurrency", icon: "mdi:bitcoin" },
+];
+---
+
+<Layout
+  title="Deposit - CS Casino"
+  description="Make a deposit to your CS Casino account"
+>
+  <main class="container mx-auto px-4 py-8">
+    <h1 class="text-4xl font-bold mb-8 text-center text-white">
+      Make a Deposit
+    </h1>
+    <div
+      class="max-w-2xl mx-auto bg-gradient-to-b from-purple-900 to-indigo-900 rounded-lg shadow-lg p-6"
+    >
+      <h2 class="text-2xl font-semibold mb-4 text-yellow-400">
+        Select Payment Method
+      </h2>
+      <div class="grid grid-cols-2 gap-4 mb-6">
+        {
+          paymentMethods.map((method) => (
+            <button class="flex items-center justify-center space-x-2 p-4 bg-white/10 rounded-lg hover:bg-white/20 transition duration-300">
+              <Icon name={method.icon} width="24" height="24" />
+              <span>{method.name}</span>
+            </button>
+          ))
+        }
+      </div>
+      <DepositForm client:load />
+    </div>
+  </main>
+</Layout>

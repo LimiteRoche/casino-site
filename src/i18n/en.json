@@ -1,0 +1,74 @@
+{
+  "nav": {
+    "home": "Home",
+    "games": "Games",
+    "promotions": "Promotions",
+    "support": "Support"
+  },
+  "auth": {
+    "login": "Login",
+    "register": "Register",
+    "logout": "Log out"
+  },
+  "betHistory": {
+    "title": "Bet History",
+    "date": "Date",
+    "type": "Type",
+    "amount": "Amount",
+    "outcome": "Outcome",
+    "profitLoss": "Profit/Loss"
+  },
+  "profile": {
+    "title": "User Profile",
+    "description": "View and edit your profile details.",
+    "accountInfo": "Account Information",
+    "username": "Username",
+    "email": "Email",
+    "name": "Name",
+    "joinDate": "Join Date",
+    "lastLogin": "Last Login",
+    "accountStatus": "Account Status",
+    "contactInfo": "Contact Information",
+    "phone": "Phone",
+    "address": "Address",
+    "preferences": "Preferences",
+    "notifications": "Notifications",
+    "newsletter": "Newsletter",
+    "save": "Save",
+    "edit": "Edit"
+  },
+  "contact": {
+    "name": "Name",
+    "email": "Email",
+    "subject": "Subject",
+    "message": "Message",
+    "send": "Send"
+  },
+  "myGames": {
+    "statistics": "Statistics",
+    "totalGamesPlayed": "Total Games Played",
+    "totalWins": "Total Wins",
+    "biggestWin": "Biggest Win",
+    "favoriteCategory": "Favorite Category",
+    "mostPlayed": "Most Played Games",
+    "mostWins": "Games with Most Wins",
+    "favorites": "Favorite Games",
+    "availableBonuses": "Available Bonuses",
+    "timesPlayed": "Times Played",
+    "wins": "Wins",
+    "expiresOn": "Expires on"
+  },
+  "promotions": {
+    "welcomeTitle": "Welcome Bonus",
+    "welcomeDescription": "Get 100% bonus up to $500 on your first deposit!",
+    "rewardTitle": "Loyalty Rewards",
+    "rewardDescription": "Earn points as you play and exchange them for bonuses!",
+    "depositTitle": "Deposit Bonus",
+    "depositDescription": "Deposit today and receive 20% extra!",
+    "playTitle": "Play & Win",
+    "playDescription": "Play your favorite games to receive a special bonus!",
+    "referralTitle": "Refer a Friend",
+    "referralDescription": "Get $50 for each friend you refer!",
+    "claimNow": "Claim Now"
+  }
+}

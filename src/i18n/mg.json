@@ -1,0 +1,74 @@
+{
+  "nav": {
+    "home": "Fandraisana",
+    "games": "Lalao",
+    "promotions": "Fampirisihana",
+    "support": "Fanampiana"
+  },
+  "auth": {
+    "login": "Hiditra",
+    "register": "Hisoratra anarana",
+    "logout": "Hivoaka"
+  },
+  "betHistory": {
+    "title": "Tantaran'ny Filokana",
+    "date": "Daty",
+    "type": "Karazana",
+    "amount": "Vola",
+    "outcome": "Vokany",
+    "profitLoss": "Tombony/Fatiantoka"
+  },
+  "profile": {
+    "title": "Mombamomba ny Mpampiasa",
+    "description": "Jereo ary ahitsio ny antsipirian'ny mombamomba anao.",
+    "accountInfo": "Fampahalalana momba ny Kaonty",
+    "username": "Anaran'ny Mpampiasa",
+    "email": "Adiresy mailaka",
+    "name": "Anarana",
+    "joinDate": "Daty Nidirana",
+    "lastLogin": "Fidirana Farany",
+    "accountStatus": "Sata ny Kaonty",
+    "contactInfo": "Fampahalalana Fifandraisana",
+    "phone": "Finday",
+    "address": "Adiresy",
+    "preferences": "Safidy",
+    "notifications": "Fampandrenesana",
+    "newsletter": "Gazety",
+    "save": "Tehirizo",
+    "edit": "Hanova"
+  },
+  "contact": {
+    "name": "Anarana",
+    "email": "Adiresy mailaka",
+    "subject": "Lohateny",
+    "message": "Hafatra",
+    "send": "Alefaso"
+  },
+  "myGames": {
+    "statistics": "Antontan'isa",
+    "totalGamesPlayed": "Isan'ny Lalao Notontosaina",
+    "totalWins": "Isan'ny Fandresena",
+    "biggestWin": "Fandresena Lehibe Indrindra",
+    "favoriteCategory": "Sokajy Tiana Indrindra",
+    "mostPlayed": "Lalao Natao Matetika",
+    "mostWins": "Lalao Nahazoana Fandresena Maro",
+    "favorites": "Lalao Tiana Indrindra",
+    "availableBonuses": "Bonus misy",
+    "timesPlayed": "Isan'ny Fanaovana",
+    "wins": "Fandresena",
+    "expiresOn": "Hifarana amin'ny"
+  },
+  "promotions": {
+    "welcomeTitle": "Bonus de Bienvenue",
+    "welcomeDescription": "Obtenez un bonus de 100% jusqu'à 500 $ sur votre premier dépôt !",
+    "rewardTitle": "Récompenses de Fidélité",
+    "rewardDescription": "Gagnez des points au fur et à mesure que vous jouez et échangez-les contre des bonus !",
+    "depositTitle": "Bonus de Dépôt",
+    "depositDescription": "Déposez aujourd'hui et recevez 20% de bonus supplémentaires !",
+    "playTitle": "Jouez & Gagnez",
+    "playDescription": "Jouez à vos jeux préférés pour recevoir un bonus spécial !",
+    "referralTitle": "Parrainez un Ami",
+    "referralDescription": "Recevez 50 $ pour chaque ami que vous parrainez !",
+    "claimNow": "Réclamer Maintenant"
+  }
+}

@@ -1,0 +1,70 @@
+---
+// src/components/Header.astro
+import { Icon } from "astro-icon/components";
+import MobileMenu from "./mobile-menu";
+import LoginButton from "./login-button";
+import LanguageSelector from "./language-selector";
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const navItems = [
+  { href: "/", icon: "mdi:home", label: t("nav.home") },
+  { href: "/my-space", icon: "mdi:face", label: t("nav.games") },
+  { href: "/games", icon: "mdi:gamepad-variant", label: t("nav.games") },
+  { href: "/promotions", icon: "mdi:gift", label: t("nav.promotions") },
+  { href: "/support", icon: "mdi:help-circle", label: t("nav.support") },
+];
+
+const { user } = Astro.props;
+---
+
+<header class="bg-gradient-to-r from-purple-900 to-indigo-900 text-white py-4">
+  <div class="container mx-auto px-4 flex justify-between items-center">
+    <a href="/" class="text-2xl font-bold">CS</a>
+
+    <nav class="hidden md:flex space-x-6">
+      {
+        navItems.map((item) => (
+          <a
+            href={item.href}
+            class="flex items-center space-x-2 hover:text-yellow-400"
+          >
+            <Icon name={item.icon} width="24" height="24" />
+            <span>{item.label}</span>
+          </a>
+        ))
+      }
+    </nav>
+
+    <div class="flex items-center space-x-2">
+      <LanguageSelector client:load />
+      {
+        user ? (
+          <form method="POST" action="/api/logout">
+            <button
+              type="submit"
+              class="text-white border border-white hover:bg-white hover:text-purple-900 px-4 py-2 rounded transition duration-300"
+            >
+              {t("auth.logout")}
+            </button>
+          </form>
+        ) : (
+          <>
+            <LoginButton client:load />
+            <a
+              href="/register"
+              class="bg-gradient-to-r from-yellow-400 to-yellow-600 hover:from-yellow-500 hover:to-yellow-700 text-black px-4 py-2 rounded flex items-center space-x-2 transition duration-300"
+            >
+              <Icon name="mdi:account-plus" width="24" height="24" />
+              <span>{t("auth.register")}</span>
+            </a>
+          </>
+        )
+      }
+    </div>
+
+    <MobileMenu client:media="(max-width: 768px)" navItems={navItems} />
+  </div>
+</header>

@@ -1,0 +1,14 @@
+---
+// src/pages/register.astro
+import Layout from "../layouts/Layout.astro";
+import Register from "../components/Register";
+import Footer from "@/components/footer.astro";
+import Header from "@/components/header";
+---
+
+<Layout
+  title="Exciting Slot Games - WinBet Casino"
+  description="Explore our wide selection of thrilling slot games at WinBet Casino. From classic favorites to the latest releases, find your perfect game and win big!"
+>
+  <Register client:load />
+</Layout>

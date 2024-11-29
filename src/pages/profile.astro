@@ -1,0 +1,38 @@
+---
+// src/pages/profile.astro
+import Layout from "../layouts/Layout.astro";
+
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+import ProfileComponent from "@/components/profile-component";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations("en");
+
+// Simular datos del usuario
+const user = {
+  id: "1",
+  username: "casinoPlayer123",
+  email: "player@example.com",
+  name: "John Doe",
+  joinDate: "2023-01-15",
+  lastLogin: "2024-03-20",
+  accountStatus: "Active",
+  // Datos editables
+  phone: "+1234567890",
+  address: "123 Casino St, Gambleville, GV 12345",
+  preferences: {
+    notifications: true,
+    newsletter: false,
+    language: "en",
+  },
+};
+---
+
+<Layout title={t("profile.title")} description={t("profile.description")}>
+  <main class="container mx-auto px-4 py-8">
+    <h1 class="text-4xl font-bold mb-8 text-center text-white">
+      {t("profile.title")}
+    </h1>
+    <ProfileComponent client:load user={user} />
+  </main>
+</Layout>

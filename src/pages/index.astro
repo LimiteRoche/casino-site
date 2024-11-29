@@ -1,16 +1,44 @@
 ---
-
+// src/pages/index.astro
+import Layout from "../layouts/Layout.astro";
+import Footer from "../components/Footer.astro";
+import SlotGames from "../components/SlotGames";
+import Header from "@/components/header";
+import Promotions from "../components/Promotions";
+import RecentWinnersTicker from "@/components/recent-winners-ticker";
+import SlotGamesContent from "../components/slot-games-content";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout
+  title="WinBet - Online Casino and Sports Betting"
+  description="Experience the thrill of online gambling with WinBet. Enjoy a wide selection of casino games, sports betting, and live dealer games. Play responsibly and securely."
+>
+  <div class="container mx-auto px-4 py-8">
+    <h1 class="sr-only">WinBet Online Casino and Sports Betting</h1>
+    <RecentWinnersTicker client:load />
+    <Promotions client:load />
+
+    <SlotGames client:load />
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+      <a
+        href="/deposit"
+        class="bg-gradient-to-r from-yellow-400 to-yellow-600 hover:from-yellow-500 hover:to-yellow-700 text-black px-4 py-2 rounded flex items-center justify-center space-x-2 transition duration-300"
+      >
+        Deposit
+      </a>
+      <a
+        href="/withdraw"
+        class="bg-gradient-to-r from-yellow-400 to-yellow-600 hover:from-yellow-500 hover:to-yellow-700 text-black px-4 py-2 rounded flex items-center justify-center space-x-2 transition duration-300"
+      >
+        Withdraw
+      </a>
+      <a
+        href="/bet-history"
+        class="bg-gradient-to-r from-yellow-400 to-yellow-600 hover:from-yellow-500 hover:to-yellow-700 text-black px-4 py-2 rounded flex items-center justify-center space-x-2 transition duration-300"
+      >
+        Bet History
+      </a>
+    </div>
+  </div>
+</Layout>

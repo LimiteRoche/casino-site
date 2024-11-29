@@ -1,0 +1,90 @@
+---
+// src/components/Footer.astro
+import { Icon } from "astro-icon/components";
+
+const footerSections = [
+  {
+    title: "About Us",
+    links: [
+      { href: "/about", label: "About WinBet" },
+      { href: "/responsible-gaming", label: "Responsible Gaming" },
+      { href: "/terms", label: "Terms & Conditions" },
+      { href: "/privacy", label: "Privacy Policy" },
+    ],
+  },
+  {
+    title: "Games",
+    links: [
+      { href: "/casino", label: "Casino Games" },
+      { href: "/live-casino", label: "Live Casino" },
+      { href: "/poker", label: "Poker" },
+    ],
+  },
+  {
+    title: "Support",
+    links: [
+      { href: "/support/faq", label: "FAQ" },
+      { href: "/support/contact", label: "Contact Us" },
+      { href: "/support/banking", label: "Banking" },
+      { href: "/support/security", label: "Security" },
+    ],
+  },
+];
+
+const socialLinks = [
+  { href: "#", icon: "mdi:facebook", label: "Facebook" },
+  { href: "#", icon: "mdi:twitter", label: "Twitter" },
+  { href: "#", icon: "mdi:instagram", label: "Instagram" },
+  { href: "#", icon: "mdi:youtube", label: "YouTube" },
+];
+---
+
+<footer class="bg-gradient-to-r from-purple-900 to-indigo-900 text-white py-8">
+  <div class="container mx-auto px-4">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      {
+        footerSections.map((section) => (
+          <div>
+            <h3 class="text-lg font-semibold mb-4 text-yellow-400">
+              {section.title}
+            </h3>
+            <ul class="space-y-2">
+              {section.links.map((link) => (
+                <li>
+                  <a
+                    href={link.href}
+                    class="hover:text-yellow-400 transition-colors"
+                  >
+                    {link.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))
+      }
+      <div>
+        <h3 class="text-lg font-semibold mb-4 text-yellow-400">
+          Connect With Us
+        </h3>
+        <div class="flex space-x-4">
+          {
+            socialLinks.map((link) => (
+              <a
+                href={link.href}
+                class="text-white hover:text-yellow-400 transition-colors"
+                aria-label={link.label}
+              >
+                <Icon name={link.icon} width="24" height="24" />
+              </a>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+    <div class="mt-8 text-center text-sm">
+      <p>&copy; 2024 WinBet. All rights reserved.</p>
+      <p class="mt-2">Gambling can be addictive. Please play responsibly.</p>
+    </div>
+  </div>
+</footer>

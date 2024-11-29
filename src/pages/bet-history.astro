@@ -1,0 +1,42 @@
+---
+// src/pages/bet-history.astro
+
+import { Icon } from "astro-icon/components";
+import { useTranslations } from "@/i18n/utils";
+import Layout from "@/layouts/Layout.astro";
+import BetHistoryTable from "@/components/bet-history-table";
+
+const t = useTranslations("mg");
+
+const betTypes = [
+  { id: "all", name: "All Bets", icon: "mdi:all-inclusive" },
+  { id: "casino", name: "Casino", icon: "mdi:cards-playing-outline" },
+  { id: "live", name: "Live Casino", icon: "mdi:cards-playing" },
+];
+---
+
+<Layout
+  title="Bet History - CS Casino"
+  description="View your betting history at CS Casino"
+>
+  <main class="container mx-auto px-4 py-8">
+    <h1 class="text-4xl font-bold mb-8 text-center text-white">
+      {t("betHistory.title")}
+    </h1>
+    <div
+      class="bg-gradient-to-b from-purple-900 to-indigo-900 rounded-lg shadow-lg p-6"
+    >
+      <div class="flex justify-center space-x-4 mb-6">
+        {
+          betTypes.map((type) => (
+            <button class="flex items-center space-x-2 p-2 bg-white/10 rounded-lg hover:bg-white/20 transition duration-300">
+              <Icon name={type.icon} width="24" height="24" />
+              <span>{type.name}</span>
+            </button>
+          ))
+        }
+      </div>
+      <BetHistoryTable client:load />
+    </div>
+  </main>
+</Layout>

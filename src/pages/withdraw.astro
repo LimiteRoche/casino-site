@@ -1,0 +1,41 @@
+---
+// src/pages/withdraw.astro
+import WithdrawForm from "@/components/withdraw-form";
+import Layout from "../layouts/Layout.astro";
+import { Icon } from "astro-icon/components";
+
+const withdrawMethods = [
+  { id: "bank-transfer", name: "Bank Transfer", icon: "mdi:bank" },
+  { id: "paypal", name: "PayPal", icon: "mdi:paypal" },
+  { id: "crypto", name: "Cryptocurrency", icon: "mdi:bitcoin" },
+];
+---
+
+<Layout
+  title="Withdraw - CS Casino"
+  description="Withdraw funds from your CS Casino account"
+>
+  <main class="container mx-auto px-4 py-8">
+    <h1 class="text-4xl font-bold mb-8 text-center text-white">
+      Withdraw Funds
+    </h1>
+    <div
+      class="max-w-2xl mx-auto bg-gradient-to-b from-purple-900 to-indigo-900 rounded-lg shadow-lg p-6"
+    >
+      <h2 class="text-2xl font-semibold mb-4 text-yellow-400">
+        Select Withdrawal Method
+      </h2>
+      <div class="grid grid-cols-2 gap-4 mb-6">
+        {
+          withdrawMethods.map((method) => (
+            <button class="flex items-center justify-center space-x-2 p-4 bg-white/10 rounded-lg hover:bg-white/20 transition duration-300">
+              <Icon name={method.icon} width="24" height="24" />
+              <span>{method.name}</span>
+            </button>
+          ))
+        }
+      </div>
+      <WithdrawForm client:load />
+    </div>
+  </main>
+</Layout>
